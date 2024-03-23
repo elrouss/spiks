@@ -1,11 +1,17 @@
-@mixin font($name, $weight, $fileName) {
+@mixin font($name, $weight, $fileName, $style: normal) {
   @font-face {
-    font-family: $name;
-    src: local("#{$name}"),
-    url("../assets/fonts/#{$name}/#{$fileName}.woff2") format("woff2"),
-    url("../assets/fonts/#{$name}/#{$fileName}.woff") format("woff");
+    font-family: $name, Arial, Helvetica, sans-serif;
+    src:
+      local('#{$name}'),
+      url('../assets/fonts/#{$name}/#{$fileName}.woff2') format('woff2'),
+      url('../assets/fonts/#{$name}/#{$fileName}.woff') format('woff'),
+      url('../assets/fonts/#{$name}/#{$fileName}.ttf') format('truetype');
     font-weight: $weight;
-    font-style: normal;
+    font-style: $style;
     font-display: swap;
   }
 }
+
+@include font(Proxima Nova, 400, ProximaNova-Regular);
+@include font(Proxima Nova, 600, ProximaNova-Semibold);
+@include font(Proxima Nova, 700, ProximaNova-Bold);
