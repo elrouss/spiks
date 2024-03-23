@@ -1,0 +1,46 @@
+@use '../../../core/config/scss/' as config;
+
+.badge {
+  $root: &;
+  %cross {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    background-color: config.$colors-white;
+  }
+
+  display: inline-flex;
+  align-items: center;
+  column-gap: 3px;
+  padding: 6px 8px;
+  border-radius: 20px;
+  color: config.$colors-white;
+  background-color: config.$colors-green-300;
+  box-shadow: -5px -5px 16px 0 rgba(config.$colors-gray-200, 0.09);
+
+  &__close-icon {
+    position: relative;
+    display: inline-flex;
+    width: 14px;
+    height: 14px;
+    border: 1px solid config.$colors-white;
+    border-radius: 50%;
+    background-color: rgba(config.$colors-green-500, 0.9);
+    transform: rotate(45deg);
+
+    &::before {
+      @extend %cross;
+      width: 6px;
+      height: 1px;
+    }
+
+    &::after {
+      @extend %cross;
+      width: 1px;
+      height: 6px;
+    }
+  }
+}
