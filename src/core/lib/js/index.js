@@ -73,7 +73,9 @@
 
   const buildComponentLogger = (componentName) => {
     return (text, context = '', data = null) => {
-      const msg = context ? `${componentName}:${context}:${text}` : `${componentName}:${text}`;
+      const msg = context
+        ? `${componentName}:${context}:${text}`
+        : `${componentName}:${text}`;
       console.debug(msg);
 
       if (data) {
@@ -84,7 +86,7 @@
 
   const debounce = (callee, timeoutMs) => {
     return function perform(...args) {
-      let previousCall = this.lastCall;
+      const previousCall = this.lastCall;
       this.lastCall = Date.now();
 
       if (previousCall && this.lastCall - previousCall <= timeoutMs) {
@@ -96,16 +98,16 @@
   };
 
   const throttle = (callee, timeout) => {
-    let timer = null
+    let timer = null;
 
     return function perform(...args) {
-      if (timer) return
+      if (timer) return;
 
       timer = setTimeout(() => {
-        callee(...args)
+        callee(...args);
 
-        clearTimeout(timer)
-        timer = null
+        clearTimeout(timer);
+        timer = null;
       }, timeout);
     };
   };

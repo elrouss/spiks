@@ -1,4 +1,5 @@
 (function (window) {
+  // eslint-disable-next-line no-unused-vars
   const { config, lib } = window.app;
 
   const build = (element) => {

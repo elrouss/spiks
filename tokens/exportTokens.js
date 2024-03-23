@@ -1,6 +1,7 @@
-const fs = require("fs");
-const _ = require("lodash");
-let fileOutput = [], tempArray = [];
+const fs = require('fs');
+const _ = require('lodash');
+let fileOutput = [],
+  tempArray = [];
 
 // Load the exported variables from Figma
 // const dataColors = require("./tokens_color.json");
@@ -9,9 +10,9 @@ let fileOutput = [], tempArray = [];
 // const dataBorder = require("./tokens_border.json");
 // const dataSizes = require("./tokens_sizes.json");
 // const dataMargins = require("./tokens_margin.json");
-const dataAll = require("./design.tokens.json");
+const dataAll = require('./design.tokens.json');
 // Define the fields that contain colors and their respective Tailwind keywords
-const regexObject = new RegExp('\{(.*?)\}');
+const regexObject = new RegExp('{(.*?)}');
 
 // all tokens
 for (let field in dataAll) {
@@ -57,18 +58,17 @@ function getFiniteValue(obj, field, prefix = '', globalArray) {
   getProp(obj);
   function getProp(o, stack) {
     for (let prop in o) {
-      if (typeof (o[prop]) === 'object') {
+      if (typeof o[prop] === 'object') {
         if (!o[prop][handledFlag]) {
           Object.defineProperty(o[prop], handledFlag, {
             value: true,
             writable: false,
-            configurable: true
+            configurable: true,
           });
 
           if (!stack) {
-            propertyPath = (field ? field + '-' : '') + prop
-          }
-          else {
+            propertyPath = (field ? field + '-' : '') + prop;
+          } else {
             propertyPath = (stack ? stack + '-' : '') + prop;
           }
           getProp(o[prop], propertyPath);
@@ -76,19 +76,19 @@ function getFiniteValue(obj, field, prefix = '', globalArray) {
           propertyPath = (stack ? stack + '-' : '') + prop;
           console.error('Циклическая ссылка. Свойство: ' + propertyPath);
         }
-        delete o[prop][handledFlag]
+        delete o[prop][handledFlag];
       } else {
-
         if (prop == '$value') {
           if (propertyPath) {
-            propertyPath = propertyPath.toLowerCase()
+            propertyPath = propertyPath
+              .toLowerCase()
               .replace(/ /g, ',')
               .replace(/\-\+/g, '-lighter-')
               .replace(/\-\-/g, '-darker-')
               .replace(/\./g, '-')
               .replace(/\,/g, '-')
               .replace('{', '')
-              .replace('}', '')
+              .replace('}', '');
           }
           let element, value;
           if (regexObject.test(o[prop])) {
@@ -106,7 +106,12 @@ function getFiniteValue(obj, field, prefix = '', globalArray) {
             // }else{
             //     fileOutput['$'+propertyPath] = value;
             // }
-            getLink((propertyPath ? propertyPath : field), o[prop], prefix, globalArray);
+            getLink(
+              propertyPath ? propertyPath : field,
+              o[prop],
+              prefix,
+              globalArray
+            );
           } else {
             value = o[prop];
             fileOutput['$' + propertyPath] = value;
@@ -114,7 +119,6 @@ function getFiniteValue(obj, field, prefix = '', globalArray) {
         }
       }
     }
-
   }
 }
 
@@ -122,7 +126,6 @@ function getLink(propertyPath, object, prefix, globalArray) {
   let array = globalArray;
   if (regexObject.test(object)) {
     object = object.replace('{', '').replace('}', '').split('.');
-
 
     // for (let i = 0; i < object.length; i++) {
     //   if (object[i].includes(object[0]) && i !== 0 || object[0].includes('color')) {
@@ -132,13 +135,16 @@ function getLink(propertyPath, object, prefix, globalArray) {
 
     object.forEach((item) => {
       array = array[item];
-    })
+    });
 
     if (regexObject.test(array['$value'])) {
       getLink(propertyPath, array['$value'], prefix, globalArray);
     } else {
       if (propertyPath) {
-        propertyPath = propertyPath.toLowerCase().replace(/ /g, ',').replace(',', '-');
+        propertyPath = propertyPath
+          .toLowerCase()
+          .replace(/ /g, ',')
+          .replace(',', '-');
         fileOutput['$' + prefix + propertyPath] = array['$value'];
       }
     }
@@ -166,11 +172,11 @@ if (Object.keys(fileOutput).length > 0) {
 }
 
 fs.writeFileSync(
-  "../src/core/config/scss/_tokens.scss",
+  '../src/core/config/scss/_tokens.scss',
   variablesList.join('\n'),
-  "utf-8",
+  'utf-8'
 );
 
 console.log(
-  "Processing completed successfully. Output written to 'variableOutput.js'.",
+  "Processing completed successfully. Output written to 'variableOutput.js'."
 );
