@@ -2,6 +2,9 @@
 @use '../core/lib/scss' as lib;
 @use '../core/ui/layout';
 
+@use '../components/common/header/header.scss';
+
+@use '../components/ui/checkbox-with-icon/checkbox-with-icon.scss';
 @use '../components/ui/search-input/search-input';
 
 * {

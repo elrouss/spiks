@@ -5,5 +5,5 @@
 }
 
 @function lh($lh, $fz) {
-  @return math.div($lh, $fz) * 100%;
+  @return math.div($fz, $lh) * 100%;
 }
