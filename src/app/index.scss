@@ -4,6 +4,7 @@
 
 @use '../components/common/header/header.scss';
 
+@use '../components/ui/badge/badge.scss';
 @use '../components/ui/checkbox/checkbox.scss';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon.scss';
 @use '../components/ui/search-input/search-input';
@@ -24,6 +25,11 @@
   &::-webkit-scrollbar-thumb {
     background-color: config.$colors-black;
   }
+}
+
+button {
+  border: none;
+  cursor: pointer;
 }
 
 html {

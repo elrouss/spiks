@@ -1,0 +1,8 @@
+mixin badge(props)
+  button&attributes(attributes)(
+    type= 'button'
+    aria-label= props.ariaLabel
+  ).badge
+    if props.text
+      span.t3!= props.text
+    span.badge__close-icon
