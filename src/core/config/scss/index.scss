@@ -1,5 +1,6 @@
-@forward "./breakpoints";
-@forward "./container" as container-*;
-@forward "./colors" as colors-*;
-@forward "./font" as font-*;
-@forward "./tokens" as tokens-*;
+@forward './breakpoints';
+@forward './container' as container-*;
+@forward './colors' as colors-*;
+@forward './functions' as functions-*;
+@forward './font' as font-*;
+@forward './tokens' as tokens-*;

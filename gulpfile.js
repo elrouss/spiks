@@ -128,7 +128,7 @@ function pages() {
 
 function copyFonts() {
   return src('src/core/assets/fonts/**/*').pipe(
-    dest(`${stageDirname}//assets/fonts/`)
+    dest(`${stageDirname}/assets/fonts/`)
   );
 }
 

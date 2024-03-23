@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function rem($fz) {
+  @return math.div($fz, 16px) * 1rem;
+}
+
+@function lh($lh, $fz) {
+  @return math.div($lh, $fz) * 100%;
+}

@@ -1,0 +1,8 @@
+{
+  "header": {
+    "searchInput": {
+      "name": "search",
+      "placeholder": "Search for a product, flower, etc"
+    }
+  }
+}
