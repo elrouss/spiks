@@ -4,6 +4,7 @@
 
 @use '../components/common/header/header.scss';
 
+@use '../components/ui/checkbox/checkbox.scss';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon.scss';
 @use '../components/ui/search-input/search-input';
 
@@ -60,6 +61,13 @@ html {
   font-weight: 700;
   font-size: config.functions-rem(18px);
   line-height: config.functions-lh(18, 24.3);
+}
+
+.t2-lhl {
+  font-family: config.$font-primary;
+  font-weight: 400;
+  font-size: config.functions-rem(16px);
+  line-height: config.functions-lh(16, 23.52);
 }
 
 .t2 {
