@@ -1,0 +1,31 @@
+@use '../../../core/config/scss/' as config;
+
+.search-input {
+  $root: &;
+
+  width: 469px;
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 7px;
+    width: 100%;
+    padding: 13px 21px;
+    border: 1px solid config.$colors-gray-100;
+    border-radius: 12px;
+    cursor: text;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: config.$colors-gray-100;
+    caret-color: config.$colors-gray-100;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,14 @@
+extends ../core/ui/layout/templates/default.pug
+include ../app/index.pug
+
+block title
+  | Marketplace
+
+block body
+  main(style={ 'max-width': '1200px', 'margin': '0 auto', 'display': 'flex', 'flex-direction': 'column', 'align-items': 'center' })
+    h2.h2-b.blocks-heading UI
+
+    h3.h2-b.blocks-heading Инпуты
+
+    h2.h4.blocks-heading Поле поиска
+    +search-input({})
