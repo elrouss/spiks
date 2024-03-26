@@ -80,7 +80,7 @@
   }
 
   &__icon {
-    position: relative;
+    position: absolute;
     z-index: config.$z-index-basic-up;
     display: none;
     width: 9px;

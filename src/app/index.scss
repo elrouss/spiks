@@ -5,6 +5,8 @@
 @use '../components/common/header/header';
 @use '../components/common/logo/logo';
 
+@use '../components/blocks/filters-accordion/filters-accordion';
+
 @use '../components/ui/badge/badge';
 @use '../components/ui/checkbox/checkbox';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon';
@@ -58,6 +60,13 @@ button {
 .h3 {
   font-family: config.$font-primary;
   font-weight: 400;
+  font-size: config.functions-rem(18px);
+  line-height: config.functions-lh(18, 24.3);
+}
+
+.h3-sb-l {
+  font-family: config.$font-primary;
+  font-weight: 600;
   font-size: config.functions-rem(18px);
   line-height: config.functions-lh(18, 24.3);
 }
