@@ -12,6 +12,15 @@ block body
     h4.blocks-heading Текстовый
     +logo({ text: 'Marketplace' })
 
+    h2.h2-b.blocks-heading BLOCKS
+
+    h3.h2-b.blocks-heading Список с фильтрами
+    +filters-accordion([
+      { heading: 'Classification', list: [ { text: '100% Indica'}, { text: '100% Sativa' }, { text: '>50% Indica' }, { text: '>50% Sativa' } ] },
+      { heading: 'Classification', list: [ { text: '100% Indica'}, { text: '100% Sativa' }, { text: '>50% Indica' }, { text: '>50% Sativa' } ] },
+      { heading: 'Classification', list: [ { text: '100% Indica'}, { text: '100% Sativa' }, { text: '>50% Indica' }, { text: '>50% Sativa' } ] }
+      ])
+
     h2.h2-b.blocks-heading UI
 
     h3.h2-b.blocks-heading Кнопки
