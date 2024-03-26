@@ -1,6 +1,6 @@
 @use '../../../core/config/scss/' as config;
 
-.search-input {
+.input {
   $root: &;
 
   width: 469px;
@@ -20,8 +20,8 @@
     width: 100%;
     border: none;
     background-color: transparent;
-    color: config.$colors-gray-100;
-    caret-color: config.$colors-gray-100;
+    color: config.$colors-white;
+    caret-color: config.$colors-white;
   }
 
   &__icon {

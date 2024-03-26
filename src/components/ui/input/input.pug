@@ -1,9 +1,10 @@
-mixin search-input(props)
-  .search-input&attributes(attributes)(
+mixin input(props)
+  .input&attributes(attributes)(
     class!= props.extraClass
   )
-    label.search-input__label
-      +svg('search').search-input__icon
+    label.input__label
+      if props.icon
+        +svg(props.icon).input__icon
       input(
         type= 'text'
         name= props.name
@@ -16,4 +17,4 @@ mixin search-input(props)
         autocomplete= props.autocomplete
         required= props.isRequired
         disabled= props.disabled
-      ).t2.search-input__input
+      ).t2.input__input
