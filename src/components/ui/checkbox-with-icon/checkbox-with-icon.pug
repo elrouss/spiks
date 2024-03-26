@@ -1,0 +1,18 @@
+mixin checkbox-with-icon(props)
+  label.checkbox-with-icon&attributes(attributes)
+    input.checkbox-with-icon__input(
+      type= 'checkbox'
+      id= props.id
+      name= props.name
+      value= props.value
+      required= props.required
+      checked= props.checked
+    )
+    span.checkbox-with-icon__bg-border
+      span.checkbox-with-icon__bg
+
+    if props.icon
+      +svg(props.icon).checkbox-with-icon__icon
+    if props.text
+      span.t1-b.checkbox-with-icon__text!= props.text
+    

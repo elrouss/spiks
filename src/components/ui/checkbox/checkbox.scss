@@ -1,0 +1,95 @@
+@use '../../../core/config/scss/' as config;
+
+.checkbox {
+  $root: &;
+  $border-radius: 2px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 5px;
+  user-select: none;
+  cursor: pointer;
+
+  &__input {
+    @extend %input-hidden;
+
+    &:checked {
+      + #{$root}__box {
+        &::after {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        #{$root}__box-border {
+          border-color: transparent;
+        }
+
+        #{$root}__icon {
+          display: block;
+        }
+      }
+
+      ~ #{$root}__text {
+        color: config.$colors-white;
+      }
+    }
+  }
+
+  &__box {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    border-radius: $border-radius;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: $border-radius;
+      // TODO: поймать градиент
+      background: linear-gradient(
+          266.56deg,
+          rgba(config.$colors-green-600, 0.2),
+          rgba(config.$colors-green-1000, 1)
+        ),
+        linear-gradient(0, config.$colors-green-400, config.$colors-green-400);
+      filter: box-shadow(3px 5px 12px rgba(config.$colors-white, 0.36))
+        drop-shadow(0 10px 27px rgba(config.$colors-black-200, 0.3));
+      visibility: hidden;
+      opacity: 0;
+      transition: all config.$animations-duration-basic
+        config.$animations-timing-basic;
+    }
+  }
+
+  &__box-border {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid config.$colors-gray-100;
+    border-radius: $border-radius;
+    transition: border-color config.$animations-duration-basic
+      config.$animations-timing-basic;
+  }
+
+  &__icon {
+    position: relative;
+    z-index: config.$z-index-basic-up;
+    display: none;
+    width: 9px;
+    height: 7px;
+  }
+
+  &__text {
+    color: config.$colors-gray-100;
+    transition: color config.$animations-duration-basic
+      config.$animations-timing-basic;
+  }
+}

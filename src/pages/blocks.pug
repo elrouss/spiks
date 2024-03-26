@@ -1,0 +1,41 @@
+extends ../core/ui/layout/templates/default.pug
+include ../app/index.pug
+
+block title
+  | Marketplace
+
+block body
+  main(style={ 'max-width': '1200px', 'margin': '0 auto', 'display': 'flex', 'flex-direction': 'column', 'align-items': 'center' })
+    h2.h2-b.blocks-heading COMMON
+
+    h3.h2-b.blocks-heading Логотип
+    h4.blocks-heading Текстовый
+    +logo({ text: 'Marketplace' })
+
+    h2.h2-b.blocks-heading UI
+
+    h3.h2-b.blocks-heading Кнопки
+    h4.blocks-heading Бейдж
+    +badge({ text: '100% Indica' })
+
+    h3.h2-b.blocks-heading Инпуты
+    h4.blocks-heading Поле поиска
+    +input({ icon: 'search'} )
+
+    h3.h2-b.blocks-heading Чекбоксы
+    h4.blocks-heading Стандартный
+    +checkbox({ text: '100% Indica' })
+
+    h4.h4.blocks-heading С иконкой
+    +checkbox-with-icon({ text: 'Buds', icon: 'plant' })
+
+    h3.h2-b.blocks-heading Ползунки
+    h4.blocks-heading C 1 рубильником
+    +range-slider({text: 'ТНС, %', inputs: { start: true }})
+
+    h4.blocks-heading C 2 рубильниками
+    +range-slider({text: 'Price Range', inputs: { start: true, end: true }})
+
+    h3.h2-b.blocks-heading Выпадающие списки
+    h4.blocks-heading Сортировочный лист
+    +sort-list({ list: { heading: 'Sort by:', items: [ { text: 'Date (New first)', icon: 'calendar', name: 'sort' }, { text: 'Date (New first)', icon: 'calendar', name: 'sort' }, { text: 'Date (New first)', icon: 'calendar', name: 'sort' } ] } })

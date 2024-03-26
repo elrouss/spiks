@@ -1,5 +1,9 @@
-@forward "./breakpoints";
-@forward "./container" as container-*;
-@forward "./colors" as colors-*;
-@forward "./font" as font-*;
-@forward "./tokens" as tokens-*;
+@forward './breakpoints';
+@forward './container' as container-*;
+@forward './colors' as colors-*;
+@forward './placeholders' as placeholders-*;
+@forward './functions' as functions-*;
+@forward './font' as font-*;
+@forward './z-index' as z-index-*;
+@forward './animations' as animations-*;
+@forward './tokens' as tokens-*;
