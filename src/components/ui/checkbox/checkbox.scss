@@ -59,8 +59,8 @@
           rgba(config.$colors-green-1000, 1)
         ),
         linear-gradient(0, config.$colors-green-400, config.$colors-green-400);
-      filter: box-shadow(3px 5px 12px 0 rgba(config.$colors-white, 0.36))
-        drop-shadow(0 10px 27px 0 rgba(config.$colors-black-200, 0.3));
+      filter: box-shadow(3px 5px 12px rgba(config.$colors-white, 0.36))
+        drop-shadow(0 10px 27px rgba(config.$colors-black-200, 0.3));
       visibility: hidden;
       opacity: 0;
       transition: all config.$animations-duration-basic

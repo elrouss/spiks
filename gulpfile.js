@@ -21,6 +21,9 @@ const plumber = require('gulp-plumber');
 
 const ghPages = require('gulp-gh-pages');
 
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+
 const extendedSvgSpritesBuilder = (mode) => {
   return (cb) => {
     const pipeline = src('src/core/assets/icons/**/*.svg');
@@ -80,8 +83,12 @@ function upLocalServer() {
   });
 }
 
+// TODO Разделить?
 function styles() {
-  return src('src/app/index.+(scss|sass)')
+  return src([
+    'node_modules/nouislider/dist/nouislider.css',
+    'src/app/index.+(scss|sass)',
+  ])
     .pipe(sass().on('error', sass.logError))
     .pipe(
       autoprefixer({
@@ -90,18 +97,22 @@ function styles() {
       })
     )
     .pipe(gcmq())
+    .pipe(concat('index.css'))
     .pipe(dest(`${stageDirname}/css/`))
     .pipe(localServer.stream());
 }
 
+// TODO Разделить?
 function scripts() {
-  return src('src/app/index.js')
+  return src(['node_modules/nouislider/dist/nouislider.js', 'src/app/index.js'])
+    .pipe(concat('index.js'))
     .pipe(include({ hardFail: true }))
     .pipe(
       babel({
         presets: ['@babel/env'],
       })
     )
+    .pipe(uglify())
     .pipe(dest(`${stageDirname}/js/`))
     .pipe(localServer.stream());
 }

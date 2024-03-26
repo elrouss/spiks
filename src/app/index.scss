@@ -9,7 +9,8 @@
 @use '../components/ui/checkbox/checkbox';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon';
 @use '../components/ui/radio-with-icon/radio-with-icon';
-@use '../components/ui/search-input/search-input';
+@use '../components/ui/range-slider/range-slider.scss';
+@use '../components/ui/input/input';
 @use '../components/ui/sort-list/sort-list';
 
 * {

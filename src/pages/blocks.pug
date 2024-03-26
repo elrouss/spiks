@@ -20,7 +20,7 @@ block body
 
     h3.h2-b.blocks-heading Инпуты
     h4.blocks-heading Поле поиска
-    +search-input({})
+    +input({ icon: 'search'} )
 
     h3.h2-b.blocks-heading Чекбоксы
     h4.blocks-heading Стандартный
@@ -28,6 +28,13 @@ block body
 
     h4.h4.blocks-heading С иконкой
     +checkbox-with-icon({ text: 'Buds', icon: 'plant' })
+
+    h3.h2-b.blocks-heading Ползунки
+    h4.blocks-heading C 1 рубильником
+    +range-slider({text: 'ТНС, %', inputs: { start: true }})
+
+    h4.blocks-heading C 2 рубильниками
+    +range-slider({text: 'Price Range', inputs: { start: true, end: true }})
 
     h3.h2-b.blocks-heading Выпадающие списки
     h4.blocks-heading Сортировочный лист
