@@ -11,8 +11,11 @@ mixin products(props)
 
     .products__results
       if props.results
-        h3!= props.results
+        h3.h3-sb.products__results-heading!= props.results
         .products__badges-container
 
     if props.accordion
       +filters-accordion(props.accordion).products__filters-accordion
+
+    template.products__template-badge
+      +badge({ ariaLabel: 'Remove filter' })

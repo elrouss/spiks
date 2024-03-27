@@ -18,4 +18,4 @@ mixin filters-accordion(props)
               ul.filters-accordion__list
                 each item in group.list
                   li.filters-accordion__list-item
-                    +checkbox(item)
+                    +checkbox({ ...item, hasId: true })

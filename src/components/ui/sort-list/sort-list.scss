@@ -51,6 +51,7 @@
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: config.$z-index-basic-up;
     padding: 20px;
     border-radius: $border-radius;
     background-color: config.$colors-gray-700;
