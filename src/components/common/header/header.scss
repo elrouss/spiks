@@ -1,42 +1,14 @@
 .header {
   $root: &;
 
-  max-width: 1432px;
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
   padding-top: 22px;
-  margin: 0 auto;
-
-  &__wrapper-top {
-    display: flex;
-    align-items: center;
-    column-gap: 16px;
-  }
-
-  &__wrapper-middle {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 29px;
-  }
-
-  &__wrapper-bottom {
-    display: flex;
-    column-gap: 30px;
-    margin-top: 15px;
-  }
 
   &__checkboxes {
     & > *:not(:first-child) {
       margin-left: 8px;
     }
-  }
-
-  &__range-sliders {
-    display: flex;
-    column-gap: 25px;
-  }
-
-  &__badges-container {
-    display: flex;
-    column-gap: 10px;
-    flex-wrap: wrap;
   }
 }

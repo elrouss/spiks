@@ -1,0 +1,27 @@
+.products {
+  &__ranges {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__range-sliders {
+    display: flex;
+    column-gap: 25px;
+  }
+
+  &__badges-container {
+    display: flex;
+    column-gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__results {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 15px;
+  }
+
+  &__filters-accordion {
+    margin-top: 30px;
+  }
+}

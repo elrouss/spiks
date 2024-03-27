@@ -1,0 +1,18 @@
+mixin products(props)
+  section&attributes(attributes).products
+    if props.rangeSliders || props.sortList
+      .products__ranges
+        if props.rangeSliders
+          .products__range-sliders
+            each rangeSlider in props.rangeSliders
+              +range-slider(rangeSlider)
+        if props.sortList
+          +sort-list(props.sortList)
+
+    .products__results
+      if props.results
+        h3!= props.results
+        .products__badges-container
+
+    if props.accordion
+      +filters-accordion(props.accordion).products__filters-accordion

@@ -5,7 +5,7 @@
   $border-radius: 10px;
 
   position: relative;
-  display: grid;
+  height: fit-content;
 
   &__btn {
     position: relative;
@@ -49,8 +49,8 @@
 
   &__list-wrapper {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100%;
+    right: 0;
     padding: 20px;
     border-radius: $border-radius;
     background-color: config.$colors-gray-700;
@@ -65,7 +65,7 @@
         config.$animations-timing-basic;
 
     &._visible {
-      margin-top: 10px;
+      margin-top: 17px;
       opacity: 1;
       visibility: visible;
     }

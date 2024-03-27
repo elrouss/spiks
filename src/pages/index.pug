@@ -5,5 +5,6 @@ block title
   | Marketplace
 
 block body
-  +header(dataJson.index.header)
-  main
+  +header(dataJson.index.header).ctr-l
+  main.ctr-l.mt-m
+    +products(dataJson.index.main.products)
