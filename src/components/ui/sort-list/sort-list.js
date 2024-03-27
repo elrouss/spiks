@@ -7,8 +7,8 @@
     constructor() {
       this.root = document.querySelector('.sort-list');
 
-      this.btn = this.root.querySelector('.sort-list__btn');
-      this.list = this.root.querySelector('.sort-list__list-wrapper');
+      this.btn = this.root?.querySelector('.sort-list__btn');
+      this.list = this.root?.querySelector('.sort-list__list-wrapper');
 
       this.btn?.addEventListener('click', this.toggleListHandler);
     }

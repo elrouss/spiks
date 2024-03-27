@@ -1,8 +1,253 @@
 {
   "header": {
+    "logo": {
+      "isText": true
+    },
     "searchInput": {
       "name": "search",
       "placeholder": "Search for a product, flower, etc"
+    },
+    "checkboxes": [
+      {
+        "text": "Buds",
+        "name": "buds",
+        "checked": true
+      },
+      {
+        "text": "Edible",
+        "name": "edible"
+      },
+      {
+        "text": "Non Edible",
+        "name": "nonEdible"
+      },
+      {
+        "text": "Concentrate",
+        "name": "concentrate"
+      }
+    ],
+    "rangeSliders": [
+      {
+        "text": "Price Range",
+        "inputs": {
+          "start": true,
+          "end": true
+        },
+        "params": {
+          "handlesNum": 2,
+          "start": 234,
+          "end": 9999,
+          "range": {
+            "min": 234,
+            "max": 9999
+          },
+          "valueSymbol": "\u0024",
+          "hasInputs": true
+        }
+      },
+      {
+        "text": "ТНС, \u0025",
+        "inputs": {
+          "start": true
+        },
+        "params": {
+          "handlesNum": 1,
+          "start": 65,
+          "valueSymbol": "\u0025",
+          "hasInputs": true
+        }
+      },
+      {
+        "text": "CBD, \u0025",
+        "inputs": {
+          "start": true
+        },
+        "params": {
+          "handlesNum": 1,
+          "start": 65,
+          "valueSymbol": "\u0025",
+          "hasInputs": true
+        }
+      }
+    ],
+    "results": "1034,5 Results",
+    "sortList": {
+      "list": {
+        "heading": "Sort by:",
+        "items": [
+          {
+            "text": "Date (New first)",
+            "icon": "calendar",
+            "name": "sort",
+            "value": "0"
+          },
+          {
+            "text": "Date (Old first)",
+            "icon": "calendar",
+            "name": "sort",
+            "value": "1"
+          },
+          {
+            "text": "Price (High first)",
+            "icon": "arrow-up",
+            "name": "sort",
+            "value": "2"
+          },
+          {
+            "text": "Price (Low first)",
+            "icon": "arrow-down",
+            "name": "sort",
+            "value": "3"
+          },
+          {
+            "text": "Total THC (High first)",
+            "icon": "THC-arrow-up",
+            "name": "sort",
+            "value": "4"
+          },
+          {
+            "text": "Total THC (Low first)",
+            "icon": "THC-arrow-down",
+            "name": "sort",
+            "value": "5"
+          },
+          {
+            "text": "Total CBD (High first)",
+            "icon": "CBD-arrow-up",
+            "name": "sort",
+            "value": "6"
+          },
+          {
+            "text": "Total CBD (Low first)",
+            "icon": "CBD-arrow-down",
+            "name": "sort",
+            "value": "7"
+          }
+        ]
+      }
     }
+  },
+  "main": {
+    "accordion": [
+      {
+        "heading": "Classification",
+        "list": [
+          {
+            "text": "100% Indica",
+            "name": "classification",
+            "value": "0",
+            "checked": true
+          },
+          {
+            "text": "100% Sativa",
+            "name": "classification",
+            "value": "1"
+          },
+          {
+            "text": ">50 Indica",
+            "name": "classification",
+            "value": "2",
+            "checked": true
+          },
+          {
+            "text": ">50% Sativa",
+            "name": "classification",
+            "value": "3"
+          }
+        ]
+      },
+      {
+        "heading": "Production Method",
+        "list": [
+          {
+            "text": "Indoor",
+            "name": "productionMethod",
+            "value": "0",
+            "checked": true
+          },
+          {
+            "text": "Outdoor",
+            "name": "productionMethod",
+            "value": "1"
+          },
+          {
+            "text": "Greenhouse",
+            "name": "productionMethod",
+            "value": "2"
+          },
+          {
+            "text": "Light Deprivation",
+            "name": "productionMethod",
+            "value": "3"
+          },
+          {
+            "text": "Mixed Light",
+            "name": "productionMethod",
+            "value": "4"
+          },
+          {
+            "text": "Other",
+            "name": "productionMethod",
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "heading": "Size",
+        "list": [
+          {
+            "text": "Flower",
+            "name": "size",
+            "value": "0",
+            "checked": true
+          },
+          {
+            "text": "Pre-Roll Flower",
+            "name": "size",
+            "value": "1"
+          },
+          {
+            "text": "Pre-Roll Infused",
+            "name": "size",
+            "value": "2"
+          },
+          {
+            "text": "Pre-Roll Leaf",
+            "name": "size",
+            "value": "3"
+          },
+          {
+            "text": "Shake",
+            "name": "size",
+            "value": "4"
+          },
+          {
+            "text": "Smalls",
+            "name": "size",
+            "value": "5"
+          },
+          {
+            "text": "Trim",
+            "name": "size",
+            "value": "6"
+          },
+          {
+            "text": "Shake",
+            "name": "size",
+            "value": "4"
+          },
+          {
+            "text": "Keef",
+            "name": "size",
+            "value": "7"
+          },
+          {
+            "text": "Fresh Frozen",
+            "name": "size",
+            "value": "8"
+          }
+        ]
+      }
+    ]
   }
 }

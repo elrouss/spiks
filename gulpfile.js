@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const { src, dest, parallel, series, watch } = require('gulp');
+const fs = require('fs');
 
 const stageDirname = 'public';
 
@@ -123,6 +124,14 @@ function pugMaker() {
     .pipe(
       pug({
         pretty: true,
+        locals: {
+          dataJson: {
+            index:
+              JSON.parse(
+                fs.readFileSync('./src/core/assets/data/index.json')
+              ) || {},
+          },
+        },
       })
     )
     .pipe(dest(`${stageDirname}/`))

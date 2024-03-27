@@ -1,2 +1,25 @@
 mixin header(props)
   header&attributes(attributes).header
+
+    .header__wrapper-top
+      if props.logo
+        +logo(props.logo)
+      if props.searchInput
+        +input(props.searchInput)
+      if props.checkboxes
+        .header__checkboxes
+          each checkbox in props.checkboxes
+            +checkbox-with-icon(checkbox)
+
+    .header__wrapper-middle
+      if props.rangeSliders
+        .header__range-sliders
+          each rangeSlider in props.rangeSliders
+            +range-slider(rangeSlider)
+      if props.sortList
+        +sort-list(props.sortList)
+
+    .header__wrapper-bottom
+      if props.results
+        h3!= props.results
+        .header__badges-container
