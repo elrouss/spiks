@@ -4,18 +4,19 @@
   }
 
   class RangeSlider {
-    constructor(root, params) {
+    constructor(root) {
       this.root = root;
 
       this.slider = this.root.querySelector('.range-slider__slider');
       this.inputs = this.root.querySelectorAll('.input__input');
 
-      this.init(params);
+      this.init();
     }
 
-    init = (params) => {
+    init = () => {
       if (!this.slider) return;
 
+      const params = JSON.parse(this.root?.dataset?.params);
       const handles = params.handlesNum || 1;
 
       const sliderOptions = {
@@ -87,10 +88,12 @@
   }
 
   window.app.rangeSlider = {
-    init: (paramsArray) => {
-      document.querySelectorAll('.range-slider').forEach((slider, i) => {
-        new RangeSlider(slider, paramsArray[i]);
+    init: () => {
+      document.querySelectorAll('.range-slider').forEach((slider) => {
+        new RangeSlider(slider);
       });
     },
   };
+
+  window.app.rangeSlider.init();
 })(window);
