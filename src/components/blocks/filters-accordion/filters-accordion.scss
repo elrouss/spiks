@@ -17,10 +17,10 @@
     width: 100%;
     height: 100%;
     border-radius: inherit;
-    padding: 14px 16px 29px;
+    padding: 11px 16px 30px;
     background-color: config.$colors-gray-400;
     background-image: url(../assets/media/bg-leaf.png);
-    background-position: -1px 33.8%;
+    background-position: -1px 51%;
     background-repeat: no-repeat;
   }
 
@@ -54,7 +54,7 @@
       }
 
       #{$root}__list {
-        margin-top: 10px;
+        margin-top: 9px;
       }
     }
 
