@@ -13,14 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spiks/bitrix-markup-stub.git"
+    "url": "git+https://github.com/elrouss/spiks.git"
   },
   "author": "Boris Zashliapin",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/spiks/bitrix-markup-stub/issues"
-  },
-  "homepage": "https://github.com/spiks/bitrix-markup-stub#readme",
   "devDependencies": {
     "@babel/core": "7.22.11",
     "@babel/preset-env": "7.22.10",
