@@ -77,7 +77,7 @@
   }
 
   &__list-item {
-    max-width: 177px;
+    width: 177px;
     @extend %text-one-line-limit;
 
     &:not(:first-child) {
