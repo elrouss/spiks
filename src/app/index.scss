@@ -85,7 +85,7 @@ button {
   line-height: config.functions-lh(16, 21.6);
 }
 
-// // Обычный текст
+// Обычный текст
 .t1-b {
   font-family: config.$font-primary;
   font-weight: 700;
@@ -114,15 +114,22 @@ button {
   line-height: config.functions-lh(12, 16.2);
 }
 
+.t4 {
+  font-family: config.$font-primary;
+  font-weight: 400;
+  font-size: config.functions-rem(14px);
+  line-height: config.functions-lh(14, 18.9);
+}
+
 // КОНТЕЙНЕРЫ
 .ctr-l {
-  max-width: 1432px;
+  max-width: 1419px;
   margin: 0 auto;
 }
 
 // ОТСТУПЫ
 .mt-m {
-  margin-top: 29px;
+  margin-top: 27px;
 }
 
 // Страница с блоками

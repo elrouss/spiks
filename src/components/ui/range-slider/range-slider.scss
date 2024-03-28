@@ -4,7 +4,7 @@
   $root: &;
 
   &__text {
-    margin-bottom: 17px;
+    margin-bottom: 22px;
   }
 
   &__slider {
@@ -70,7 +70,12 @@
   &__inputs {
     display: flex;
     justify-content: flex-end;
-    margin-top: 17px;
+    margin-top: 15px;
+
+    input {
+      font-size: config.functions-rem(14px);
+      line-height: config.functions-lh(14, 18.9);
+    }
   }
 
   &__input {
@@ -80,7 +85,7 @@
       .input__label {
         border-radius: 3px;
         border-color: config.$colors-gray-300;
-        padding: 4px 5px;
+        padding: 0 2px;
       }
     }
 

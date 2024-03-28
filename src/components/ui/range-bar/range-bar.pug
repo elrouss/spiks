@@ -4,7 +4,7 @@ mixin range-bar(props)
 
   .range-bar&attributes(attributes)
     if props.text
-      #{props.tagText || 'h3'}.h3-sb.range-bar__text!= props.text
+      #{props.tagText || 'h2'}.h3-sb.range-bar__text!= props.text
     .range-bar__content-wrapper
       ol.range-bar__content
         - for (let i = 0; i < max; i++) {
@@ -22,6 +22,6 @@ mixin range-bar(props)
               span.range-bar__off-mask.range-bar__off-mask_hidden
             span.range-bar__empty-space
         - }
-      .t2.range-bar__scale
+      .t3.range-bar__scale
         p min
         p max

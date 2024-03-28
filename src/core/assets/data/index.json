@@ -5,25 +5,30 @@
     },
     "searchInput": {
       "name": "search",
-      "placeholder": "Search for a product, flower, etc"
+      "placeholder": "Search for a product, flower, etc",
+      "icon": "search"
     },
     "checkboxes": [
       {
         "text": "Buds",
         "name": "buds",
+        "icon": "plant",
         "checked": true
       },
       {
         "text": "Edible",
-        "name": "edible"
+        "name": "edible",
+        "icon": "plant"
       },
       {
         "text": "Non Edible",
-        "name": "nonEdible"
+        "name": "nonEdible",
+        "icon": "plant"
       },
       {
         "text": "Concentrate",
-        "name": "concentrate"
+        "name": "concentrate",
+        "icon": "plant"
       }
     ]
   },
@@ -80,7 +85,7 @@
       ],
       "sortList": {
         "list": {
-          "heading": "Sort by:",
+          "heading": "Sort by :",
           "items": [
             {
               "text": "Date (New first)",
@@ -108,25 +113,55 @@
             },
             {
               "text": "Total THC (High first)",
-              "icon": "THC-arrow-up",
+              "icons": [
+                {
+                  "name": "THC"
+                },
+                {
+                  "name": "vector-up",
+                  "isBig": true
+                }
+              ],
               "name": "sort",
               "value": "4"
             },
             {
               "text": "Total THC (Low first)",
-              "icon": "THC-arrow-down",
+              "icons": [
+                {
+                  "name": "THC"
+                },
+                {
+                  "name": "vector-down"
+                }
+              ],
               "name": "sort",
               "value": "5"
             },
             {
               "text": "Total CBD (High first)",
-              "icon": "CBD-arrow-up",
+              "icons": [
+                {
+                  "name": "CBD"
+                },
+                {
+                  "name": "vector-up",
+                  "isBig": true
+                }
+              ],
               "name": "sort",
               "value": "6"
             },
             {
               "text": "Total CBD (Low first)",
-              "icon": "CBD-arrow-down",
+              "icons": [
+                {
+                  "name": "CBD"
+                },
+                {
+                  "name": "vector-down"
+                }
+              ],
               "name": "sort",
               "value": "7"
             }
@@ -151,7 +186,7 @@
               "value": "1"
             },
             {
-              "text": ">50 Indica",
+              "text": ">50% Indica",
               "name": "classification",
               "value": "2",
               "checked": true
