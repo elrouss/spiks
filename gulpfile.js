@@ -1,13 +1,16 @@
 /* eslint-disable no-undef */
 const { src, dest, parallel, series, watch } = require('gulp');
+const fs = require('fs');
 
 const stageDirname = 'public';
 
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
+const minifyCss = require('gulp-clean-css');
 
 const pug = require('gulp-pug');
+const minifyHtml = require('gulp-htmlmin');
 
 const babel = require('gulp-babel');
 
@@ -20,6 +23,9 @@ const cheerio = require('gulp-cheerio');
 const plumber = require('gulp-plumber');
 
 const ghPages = require('gulp-gh-pages');
+
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 
 const extendedSvgSpritesBuilder = (mode) => {
   return (cb) => {
@@ -81,7 +87,10 @@ function upLocalServer() {
 }
 
 function styles() {
-  return src('src/app/index.+(scss|sass)')
+  return src([
+    'node_modules/nouislider/dist/nouislider.css',
+    'src/app/index.+(scss|sass)',
+  ])
     .pipe(sass().on('error', sass.logError))
     .pipe(
       autoprefixer({
@@ -90,18 +99,22 @@ function styles() {
       })
     )
     .pipe(gcmq())
+    .pipe(concat('index.css'))
+    .pipe(minifyCss())
     .pipe(dest(`${stageDirname}/css/`))
     .pipe(localServer.stream());
 }
 
 function scripts() {
-  return src('src/app/index.js')
+  return src(['node_modules/nouislider/dist/nouislider.js', 'src/app/index.js'])
+    .pipe(concat('index.js'))
     .pipe(include({ hardFail: true }))
     .pipe(
       babel({
         presets: ['@babel/env'],
       })
     )
+    .pipe(uglify())
     .pipe(dest(`${stageDirname}/js/`))
     .pipe(localServer.stream());
 }
@@ -112,8 +125,17 @@ function pugMaker() {
     .pipe(
       pug({
         pretty: true,
+        locals: {
+          dataJson: {
+            index:
+              JSON.parse(
+                fs.readFileSync('./src/core/assets/data/index.json')
+              ) || {},
+          },
+        },
       })
     )
+    .pipe(minifyHtml({ collapseWhitespace: true }))
     .pipe(dest(`${stageDirname}/`))
     .pipe(localServer.reload({ stream: true }));
 }
@@ -122,13 +144,14 @@ function pugMaker() {
 function pages() {
   return src('src/pages/*.html')
     .pipe(include({ hardFail: true }))
+    .pipe(minifyHtml({ collapseWhitespace: true }))
     .pipe(dest(`${stageDirname}/`))
     .pipe(localServer.reload({ stream: true }));
 }
 
 function copyFonts() {
   return src('src/core/assets/fonts/**/*').pipe(
-    dest(`${stageDirname}//assets/fonts/`)
+    dest(`${stageDirname}/assets/fonts/`)
   );
 }
 

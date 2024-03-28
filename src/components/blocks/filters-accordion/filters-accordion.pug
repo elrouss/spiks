@@ -1,0 +1,21 @@
+mixin filters-accordion(props)
+  .filters-accordion&attributes(attributes)
+    ul.filters-accordion__wrapper
+      if props
+        each group in props
+          li.filters-accordion__group(
+            class= group.checked && 'filters-accordion__group_active'
+          )
+            if group.heading
+              .filters-accordion__heading-wrapper(
+                role="button"
+                tabindex="0"
+                aria-label="Показать/скрыть блок с фильтрами"
+              )
+                #{group.headingTag || 'h3'}.h3-sb-l!= group.heading
+                +svg('arrow-list').filters-accordion__icon
+            if group.list
+              ul.filters-accordion__list
+                each item in group.list
+                  li.filters-accordion__list-item
+                    +checkbox({ ...item, hasId: true })

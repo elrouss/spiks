@@ -1,0 +1,102 @@
+@use '../../../core/config/scss/' as config;
+
+.range-slider {
+  $root: &;
+
+  &__text {
+    margin-bottom: 22px;
+  }
+
+  &__slider {
+    width: 225px;
+    height: 4px;
+    border: none;
+
+    .noUi-base {
+      background-color: config.$colors-gray-500;
+      border-radius: 3px;
+
+      .noUi-connect {
+        background-color: config.$colors-green-700;
+        box-shadow: 0 3px 15px 0 config.$colors-green-200;
+      }
+
+      .noUi-handle {
+        right: -14px; // half the width + 6px for alignment
+        width: 16px;
+        height: 16px;
+        border: none;
+        border-radius: 50%;
+        background: linear-gradient(
+          193.42deg,
+          config.$colors-green-800 23.76%,
+          config.$colors-green-600 86.01%
+        );
+        box-shadow: 3px 5px 12px 0 #ffffff33 inset;
+        box-shadow: 0 10px 27px 0 #1e1d2e4d;
+        cursor: grab;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      .noUi-tooltip {
+        bottom: 27px;
+        border: none;
+        border-radius: 3px;
+        padding: 2px 5px;
+        color: config.$colors-white;
+        background-color: config.$colors-gray-500;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -5px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: block;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid config.$colors-gray-500;
+        }
+      }
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+
+    input {
+      font-size: config.functions-rem(14px);
+      line-height: config.functions-lh(14, 18.9);
+    }
+  }
+
+  &__input {
+    &#{&} {
+      width: auto;
+
+      .input__label {
+        border-radius: 3px;
+        border-color: config.$colors-gray-300;
+        padding: 0 2px;
+      }
+    }
+
+    &:last-child {
+      input {
+        color: config.$colors-gray-100;
+      }
+    }
+
+    &_end {
+      margin-left: auto;
+    }
+  }
+}

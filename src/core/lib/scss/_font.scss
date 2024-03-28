@@ -1,11 +1,11 @@
 @mixin font($name, $weight, $fileName, $style: normal) {
   @font-face {
-    font-family: $name, Arial, Helvetica, sans-serif;
+    font-family: $name;
     src:
       local('#{$name}'),
-      url('../assets/fonts/#{$name}/#{$fileName}.woff2') format('woff2'),
-      url('../assets/fonts/#{$name}/#{$fileName}.woff') format('woff'),
-      url('../assets/fonts/#{$name}/#{$fileName}.ttf') format('truetype');
+      url('../assets/fonts/#{$fileName}.woff2') format('woff2'),
+      url('../assets/fonts/#{$fileName}.woff') format('woff'),
+      url('../assets/fonts/#{$fileName}.ttf') format('truetype');
     font-weight: $weight;
     font-style: $style;
     font-display: swap;
