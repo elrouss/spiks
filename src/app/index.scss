@@ -2,17 +2,24 @@
 @use '../core/lib/scss' as lib;
 @use '../core/ui/layout';
 
+// SECTIONS
+@use '../components/sections/products/products';
+
+// COMMON
 @use '../components/common/header/header';
 @use '../components/common/logo/logo';
 
+// BLOCKS
 @use '../components/blocks/filters-accordion/filters-accordion';
 
+// UI
 @use '../components/ui/badge/badge';
 @use '../components/ui/checkbox/checkbox';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon';
-@use '../components/ui/radio-with-icon/radio-with-icon';
-@use '../components/ui/range-slider/range-slider.scss';
 @use '../components/ui/input/input';
+@use '../components/ui/radio-with-icon/radio-with-icon';
+@use '../components/ui/range-bar/range-bar';
+@use '../components/ui/range-slider/range-slider.scss';
 @use '../components/ui/sort-list/sort-list';
 
 * {
@@ -105,6 +112,17 @@ button {
   font-weight: 400;
   font-size: config.functions-rem(12px);
   line-height: config.functions-lh(12, 16.2);
+}
+
+// КОНТЕЙНЕРЫ
+.ctr-l {
+  max-width: 1432px;
+  margin: 0 auto;
+}
+
+// ОТСТУПЫ
+.mt-m {
+  margin-top: 29px;
 }
 
 // Страница с блоками

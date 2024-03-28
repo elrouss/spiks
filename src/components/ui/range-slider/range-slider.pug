@@ -1,5 +1,7 @@
 mixin range-slider(props)
-  .range-slider&attributes(attributes)
+  .range-slider&attributes(attributes)(
+    data-params= props.params
+  )
     if props.text
       #{props.tagText || 'h3'}.h3-sb.range-slider__text!= props.text
 

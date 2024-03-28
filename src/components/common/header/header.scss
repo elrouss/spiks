@@ -1,0 +1,14 @@
+.header {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  padding-top: 22px;
+
+  &__checkboxes {
+    & > *:not(:first-child) {
+      margin-left: 8px;
+    }
+  }
+}

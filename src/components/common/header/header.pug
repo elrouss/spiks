@@ -1,2 +1,10 @@
 mixin header(props)
   header&attributes(attributes).header
+    if props.logo
+      +logo(props.logo)
+    if props.searchInput
+      +input(props.searchInput)
+    if props.checkboxes
+      .header__checkboxes
+        each checkbox in props.checkboxes
+          +checkbox-with-icon(checkbox)

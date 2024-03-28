@@ -1,0 +1,32 @@
+.products {
+  &__ranges {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__range-sliders {
+    display: flex;
+    column-gap: 25px;
+  }
+
+  &__badges-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 28.2px;
+  }
+
+  &__results {
+    display: flex;
+    column-gap: 30px;
+    margin-top: 15px;
+  }
+
+  &__results-heading {
+    min-width: 104px;
+  }
+
+  &__filters-accordion {
+    margin-top: 30px;
+  }
+}

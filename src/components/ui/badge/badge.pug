@@ -3,6 +3,5 @@ mixin badge(props)
     type= 'button'
     aria-label= props.ariaLabel
   ).badge
-    if props.text
-      span.t3!= props.text
+    span.t3.badge__text!= props.text
     span.badge__close-icon
