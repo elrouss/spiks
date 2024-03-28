@@ -10,6 +10,6 @@
 
 %text-one-line-limit {
   overflow: hidden;
-  text-wrap: nowrap;
-  text-overflow: ellipsis;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
