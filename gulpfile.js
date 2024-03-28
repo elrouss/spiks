@@ -7,8 +7,10 @@ const stageDirname = 'public';
 const sass = require('gulp-sass')(require('sass'));
 const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
+const minifyCss = require('gulp-clean-css');
 
 const pug = require('gulp-pug');
+const minifyHtml = require('gulp-htmlmin');
 
 const babel = require('gulp-babel');
 
@@ -84,7 +86,6 @@ function upLocalServer() {
   });
 }
 
-// TODO Разделить?
 function styles() {
   return src([
     'node_modules/nouislider/dist/nouislider.css',
@@ -99,11 +100,11 @@ function styles() {
     )
     .pipe(gcmq())
     .pipe(concat('index.css'))
+    .pipe(minifyCss())
     .pipe(dest(`${stageDirname}/css/`))
     .pipe(localServer.stream());
 }
 
-// TODO Разделить?
 function scripts() {
   return src(['node_modules/nouislider/dist/nouislider.js', 'src/app/index.js'])
     .pipe(concat('index.js'))
@@ -134,6 +135,7 @@ function pugMaker() {
         },
       })
     )
+    .pipe(minifyHtml({ collapseWhitespace: true }))
     .pipe(dest(`${stageDirname}/`))
     .pipe(localServer.reload({ stream: true }));
 }
@@ -142,6 +144,7 @@ function pugMaker() {
 function pages() {
   return src('src/pages/*.html')
     .pipe(include({ hardFail: true }))
+    .pipe(minifyHtml({ collapseWhitespace: true }))
     .pipe(dest(`${stageDirname}/`))
     .pipe(localServer.reload({ stream: true }));
 }
