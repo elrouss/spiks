@@ -7,23 +7,25 @@
     constructor(root) {
       this.root = root;
 
-      this.filtersAccordion = this.root.querySelector(
+      this.filtersAccordion = this.root?.querySelector(
         '.products__filters-accordion'
       );
-      this.badgesContainer = this.root.querySelector(
+      this.badgesContainer = this.root?.querySelector(
         '.products__badges-container'
       );
-      this.badgeTemplate = this.root.querySelector('.products__template-badge');
+      this.badgeTemplate = this.root?.querySelector(
+        '.products__template-badge'
+      );
 
-      this.filtersAccordion.addEventListener('change', this.getFilterValue);
-      this.badgesContainer.addEventListener('click', this.removeBadge);
+      this.filtersAccordion?.addEventListener('change', this.getFilterValue);
+      this.badgesContainer?.addEventListener('click', this.removeBadge);
 
       this.init();
     }
 
     init = () => {
       this.filtersAccordion
-        .querySelectorAll('.checkbox')
+        ?.querySelectorAll('.checkbox')
         .forEach((checkbox) => {
           const input = checkbox.querySelector('.checkbox__input');
 
@@ -70,8 +72,8 @@
     };
 
     destroy = () => {
-      this.filtersAccordion.removeEventListener('change', this.getFilterValue);
-      this.badgesContainer.removeEventListener('click', this.removeBadge);
+      this.filtersAccordion?.removeEventListener('change', this.getFilterValue);
+      this.badgesContainer?.removeEventListener('click', this.removeBadge);
     };
   }
 

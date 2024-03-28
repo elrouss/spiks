@@ -1,0 +1,27 @@
+mixin range-bar(props)
+  -
+    const max = props.max || 10
+
+  .range-bar&attributes(attributes)
+    if props.text
+      #{props.tagText || 'h3'}.h3-sb.range-bar__text!= props.text
+    .range-bar__content-wrapper
+      ol.range-bar__content
+        - for (let i = 0; i < max; i++) {
+          li.range-bar__content-item
+            span.range-bar__empty-space.range-bar__empty-space_top
+            label.range-bar__label
+              input.range-bar__input(
+                type= 'radio'
+                id= props.id
+                name= props.name
+                value= i
+                required= props.required
+                checked= props.checked
+              )
+              span.range-bar__off-mask.range-bar__off-mask_hidden
+            span.range-bar__empty-space
+        - }
+      .t2.range-bar__scale
+        p min
+        p max

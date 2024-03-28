@@ -5,7 +5,10 @@ mixin products(props)
         if props.rangeSliders
           .products__range-sliders
             each rangeSlider in props.rangeSliders
-              +range-slider(rangeSlider)
+              if rangeSlider.type == 'rangeBar'
+                +range-bar(rangeSlider)
+              else
+                +range-slider(rangeSlider)
         if props.sortList
           +sort-list(props.sortList)
 

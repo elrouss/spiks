@@ -71,6 +71,11 @@
             "valueSymbol": "\u0025",
             "hasInputs": true
           }
+        },
+        {
+          "type": "rangeBar",
+          "text": "Nose",
+          "name": "nose"
         }
       ],
       "sortList": {

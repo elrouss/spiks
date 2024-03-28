@@ -16,9 +16,10 @@
 @use '../components/ui/badge/badge';
 @use '../components/ui/checkbox/checkbox';
 @use '../components/ui/checkbox-with-icon/checkbox-with-icon';
-@use '../components/ui/radio-with-icon/radio-with-icon';
-@use '../components/ui/range-slider/range-slider.scss';
 @use '../components/ui/input/input';
+@use '../components/ui/radio-with-icon/radio-with-icon';
+@use '../components/ui/range-bar/range-bar';
+@use '../components/ui/range-slider/range-slider.scss';
 @use '../components/ui/sort-list/sort-list';
 
 * {

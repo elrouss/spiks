@@ -45,6 +45,10 @@ block body
     h4.blocks-heading C 2 рубильниками
     +range-slider({text: 'Price Range', inputs: { start: true, end: true }})
 
+    h3.h2-b.blocks-heading Шкалы
+    h4.blocks-heading Дефолтная
+    +range-bar({ text: 'Nose', name: 'nose' })
+
     h3.h2-b.blocks-heading Выпадающие списки
     h4.blocks-heading Сортировочный лист
     +sort-list({ list: { heading: 'Sort by:', items: [ { text: 'Date (New first)', icon: 'calendar', name: 'sort' }, { text: 'Date (New first)', icon: 'calendar', name: 'sort' }, { text: 'Date (New first)', icon: 'calendar', name: 'sort' } ] } })

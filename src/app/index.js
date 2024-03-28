@@ -8,5 +8,6 @@
 // =require ../components/blocks/filters-accordion/filters-accordion.js
 
 // UI
+// =require ../components/ui/range-bar/range-bar.js
 // =require ../components/ui/range-slider/range-slider.js
 // =require ../components/ui/sort-list/sort-list.js
