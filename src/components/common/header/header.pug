@@ -5,6 +5,7 @@ mixin header(props)
     if props.searchInput
       +input(props.searchInput).header__search-input
     if props.checkboxes
-      .header__checkboxes
+      ul.header__checkboxes
         each checkbox in props.checkboxes
-          +checkbox-with-icon(checkbox)
+          li
+            +checkbox-with-icon(checkbox)

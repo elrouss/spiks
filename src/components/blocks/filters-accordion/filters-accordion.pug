@@ -10,7 +10,7 @@ mixin filters-accordion(props)
               .filters-accordion__heading-wrapper(
                 role="button"
                 tabindex="0"
-                aria-label="Показать/скрыть блок с фильтрами"
+                aria-label="Show/hide group of filters"
               )
                 #{group.headingTag || 'h3'}.h3-sb-l!= group.heading
                 +svg('arrow-list').filters-accordion__icon

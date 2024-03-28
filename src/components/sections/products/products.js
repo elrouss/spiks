@@ -52,14 +52,14 @@
     addBadge = (id, name) => {
       const badge = this.badgeTemplate.content.cloneNode(true);
 
-      badge.querySelector('.badge').setAttribute('data-id', id);
+      badge.querySelector('.products__badges-item').setAttribute('data-id', id);
       badge.querySelector('.badge__text').textContent = name;
 
       this.badgesContainer.append(badge);
     };
 
     removeBadge = (e, id) => {
-      let badge = e.target.closest('.badge');
+      let badge = e.target.closest('.products__badges-item');
 
       if (!badge) {
         badge = this.badgesContainer.querySelector(`[data-id="${id}"]`);
